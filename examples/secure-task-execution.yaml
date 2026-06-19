@@ -1,0 +1,38 @@
+mic_version: "0.1"
+contract_id: "secure-task-execution-001"
+engine_id: "example.secure_task_executor"
+task: "execute_restricted_task"
+
+input:
+  task_id: "task_001"
+  requested_by: "service_account_automation"
+  operation: "rotate_api_key"
+  target_system: "internal-service-a"
+
+constraints:
+  allow_network: false
+  max_runtime_seconds: 30
+  max_memory_mb: 256
+  require_audit: true
+  require_operator_approval: true
+  require_maintenance_window: true
+  require_secret_redaction: true
+
+actions:
+  - verify_service_account
+  - verify_operator_approval
+  - verify_maintenance_window
+  - verify_target_system_allowed
+  - execute_restricted_operation
+  - redact_sensitive_output
+  - write_audit_event
+
+output:
+  format: "json"
+  fields:
+    - executed
+    - operation_id
+    - redacted_result
+    - audit_id
+
+signature: "<signature>"

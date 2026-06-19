@@ -1,0 +1,39 @@
+mic_version: "0.1"
+contract_id: "compliance-evidence-check-001"
+engine_id: "example.compliance_evidence_checker"
+task: "verify_compliance_evidence"
+
+input:
+  subject_type: "regulated_asset"
+  subject_id: "asset_001"
+  compliance_profile: "annual_safety_review"
+  evidence_set_id: "evidence_set_2026_001"
+
+constraints:
+  allow_network: false
+  max_runtime_seconds: 60
+  max_memory_mb: 512
+  require_audit: true
+  require_policy_snapshot: true
+  fail_on_missing_required_evidence: true
+
+actions:
+  - load_required_evidence_profile
+  - verify_required_documents_exist
+  - verify_evidence_dates
+  - verify_approver_records
+  - generate_compliance_gap_report
+  - write_audit_event
+
+output:
+  format: "json"
+  fields:
+    - compliant
+    - missing_evidence
+    - expired_evidence
+    - warnings
+    - policy_snapshot_hash
+    - evidence_report_hash
+    - audit_id
+
+signature: "<signature>"

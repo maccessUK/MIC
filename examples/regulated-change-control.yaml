@@ -1,0 +1,44 @@
+mic_version: "0.1"
+contract_id: "regulated-change-control-001"
+engine_id: "example.regulated_change_control"
+task: "approve_regulated_change"
+
+input:
+  change_request_id: "change_2026_001"
+  system_id: "production-system-a"
+  requested_by: "user_123"
+  change_type: "configuration_change"
+  risk_level: "high"
+
+constraints:
+  allow_network: false
+  max_runtime_seconds: 45
+  max_memory_mb: 512
+  require_audit: true
+  require_policy_snapshot: true
+  require_dual_approval_for_high_risk: true
+  require_rollback_plan: true
+  require_test_evidence: true
+
+actions:
+  - verify_requester_authority
+  - verify_change_type_allowed
+  - verify_risk_classification
+  - verify_required_approvals
+  - verify_rollback_plan
+  - verify_test_evidence
+  - generate_change_control_evidence
+  - write_audit_event
+
+output:
+  format: "json"
+  fields:
+    - approved
+    - blocking_reasons
+    - approval_count
+    - rollback_plan_hash
+    - test_evidence_hash
+    - policy_snapshot_hash
+    - audit_id
+
+signature: "<signature>"

@@ -1,0 +1,40 @@
+mic_version: "0.1"
+contract_id: "ai-agent-approval-001"
+engine_id: "example.ai_agent_action_approval"
+task: "approve_ai_agent_action"
+
+input:
+  actor_type: "ai_agent"
+  actor_id: "support-agent-17"
+  requested_action: "issue_refund"
+  target_type: "order"
+  target_id: "order_12345"
+  amount_gbp: 149.99
+  reason: "customer reported duplicate payment"
+
+constraints:
+  allow_network: false
+  max_runtime_seconds: 30
+  max_memory_mb: 256
+  require_audit: true
+  require_policy_snapshot: true
+  require_human_approval_above_gbp: 100
+
+actions:
+  - verify_actor_identity
+  - verify_requested_action
+  - verify_policy_limits
+  - require_human_approval
+  - generate_decision_evidence
+  - write_audit_event
+
+output:
+  format: "json"
+  fields:
+    - decision
+    - reason
+    - required_approvals
+    - policy_snapshot_hash
+    - audit_id
+
+signature: "<signature>"
