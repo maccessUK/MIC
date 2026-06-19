@@ -1,0 +1,16 @@
+mic_version: "0.1.1"
+engine_id: "example.ai_action.approval"
+engine_version: "0.1.1"
+runtime_compatibility: ">=0.1.1 <0.2.0"
+binary_path: "examples/engines/ai-agent-approval-engine"
+binary_sha256: "PLACEHOLDER_SHA256_REPLACE_AFTER_BUILD"
+allowed_tasks:
+  - "approve_ai_requested_action"
+allowed_actions:
+  - "verify_agent_identity"
+  - "verify_requested_action"
+  - "verify_policy_rules"
+  - "verify_human_approval"
+  - "generate_action_decision"
+  - "write_audit_event"
+signature: "PLACEHOLDER_SIGNATURE_REPLACE_AFTER_SIGNING"

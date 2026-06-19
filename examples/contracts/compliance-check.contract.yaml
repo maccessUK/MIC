@@ -1,0 +1,34 @@
+mic_version: "0.1.1"
+contract_id: "example-compliance-check-001"
+engine_id: "example.compliance.check"
+task: "verify_compliance_status"
+
+subject:
+  type: "regulated_asset"
+  id: "ASSET-001"
+
+constraints:
+  allow_network: false
+  require_audit: true
+  require_policy_snapshot: true
+  require_evidence_output: true
+  max_runtime_seconds: 120
+  max_memory_mb: 512
+
+actions:
+  - "verify_required_evidence"
+  - "verify_evidence_dates"
+  - "verify_approval_threshold"
+  - "generate_compliance_report"
+  - "write_audit_event"
+
+output:
+  format: "json"
+  fields:
+    - "compliance_status"
+    - "missing_evidence"
+    - "expired_evidence"
+    - "policy_snapshot_hash"
+    - "audit_id"
+
+signature: "PLACEHOLDER_SIGNATURE_REPLACE_AFTER_SIGNING"

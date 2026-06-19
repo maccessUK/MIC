@@ -1,0 +1,27 @@
+policy_version: "0.1.1"
+policy_id: "mic.no_network"
+
+defaults:
+  fail_closed: true
+  allow_network: false
+  require_audit: true
+  require_signed_contract: true
+  require_signed_manifest: true
+  require_engine_hash_match: true
+
+limits:
+  max_runtime_seconds: 180
+  max_memory_mb: 512
+
+blocked_actions:
+  - "open_network"
+  - "open_unrestricted_network"
+  - "download_remote_code"
+  - "exfiltrate_data"
+
+audit:
+  write_on_accept: true
+  write_on_reject: true
+  include_contract_hash: true
+  include_manifest_hash: true
+  include_policy_hash: true

@@ -1,0 +1,15 @@
+mic_version: "0.1.1"
+engine_id: "example.compliance.check"
+engine_version: "0.1.1"
+runtime_compatibility: ">=0.1.1 <0.2.0"
+binary_path: "examples/engines/compliance-check-engine"
+binary_sha256: "PLACEHOLDER_SHA256_REPLACE_AFTER_BUILD"
+allowed_tasks:
+  - "verify_compliance_status"
+allowed_actions:
+  - "verify_required_evidence"
+  - "verify_evidence_dates"
+  - "verify_approval_threshold"
+  - "generate_compliance_report"
+  - "write_audit_event"
+signature: "PLACEHOLDER_SIGNATURE_REPLACE_AFTER_SIGNING"

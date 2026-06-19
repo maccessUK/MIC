@@ -196,18 +196,65 @@ MIC/
 ├─ GOVERNANCE.md
 ├─ CONTRIBUTING.md
 ├─ examples/
-│  ├─ ai-agent-approval.yaml
-│  ├─ compliance-evidence-check.yaml
-│  ├─ regulated-change-control.yaml
-│  └─ secure-task-execution.yaml
+│  ├─ contracts/
+│  ├─ manifests/
+│  └─ policies/
 ├─ docs/
+│  ├─ RUNTIME.md
+│  ├─ SIGNING.md
+│  ├─ TRUST_CHAIN.md
 │  ├─ positioning.md
 │  └─ terminology.md
 ├─ runtime/
+│  ├─ mic_runtime.c
 │  └─ README.md
 └─ validator/
    └─ README.md
 ```
+
+---
+
+## What is included in v0.1.1?
+
+- C runtime source
+- example contracts
+- example engine manifests
+- example policies
+- fail-closed policy model
+- audit output format
+- real Ed25519 verification against the published public key
+
+The included examples use explicit placeholder signatures and engine hashes.
+They demonstrate an unverified dry-run workflow and must not be represented as
+signed production artifacts.
+
+## Source vs Binary
+
+The public repository publishes source code as the primary artifact.
+
+Compiled binaries may be published later through GitHub Releases.
+
+Do not trust binaries unless they are released by the project maintainer and
+their checksums/signatures match the published release metadata.
+
+Never commit private signing keys.
+
+## Quick start
+
+With a C compiler, `make`, and libsodium development headers installed:
+
+```bash
+make build
+
+build/mic-runtime \
+  --contract examples/contracts/compliance-check.contract.yaml \
+  --manifest examples/manifests/compliance-check.engine.yaml \
+  --policy examples/policies/default-fail-closed.policy.yaml \
+  --audit-out audit/compliance-check.audit.json
+```
+
+See [runtime documentation](docs/RUNTIME.md),
+[signing](docs/SIGNING.md), and the [trust chain](docs/TRUST_CHAIN.md).
 
 ---
 

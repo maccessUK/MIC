@@ -1,0 +1,27 @@
+policy_version: "0.1.1"
+policy_id: "mic.default.fail_closed"
+
+defaults:
+  fail_closed: true
+  allow_network: false
+  require_audit: true
+  require_signed_contract: true
+  require_signed_manifest: true
+  require_engine_hash_match: true
+
+limits:
+  max_runtime_seconds: 300
+  max_memory_mb: 1024
+
+blocked_actions:
+  - "execute_arbitrary_code"
+  - "open_unrestricted_network"
+  - "write_unapproved_path"
+  - "modify_business_database_directly"
+
+audit:
+  write_on_accept: true
+  write_on_reject: true
+  include_contract_hash: true
+  include_manifest_hash: true
+  include_policy_hash: true

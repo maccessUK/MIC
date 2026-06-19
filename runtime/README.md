@@ -1,17 +1,28 @@
-# MIC Runtime
+# MIC v0.1.1 Reference Runtime
 
-This folder is reserved for the MIC Core Runtime implementation.
+`mic_runtime.c` is the public C reference validator for MIC v0.1.1.
 
-The runtime should:
+It validates contracts, manifests, policies, allowed tasks/actions, network
+policy, resource limits, Ed25519 signatures, and engine SHA-256 values. It
+writes audit JSON and fails closed.
 
-- parse contracts
-- validate contract schema
-- verify signatures
-- verify engine manifests
-- enforce policies
-- launch approved engines
-- capture engine output
-- write audit records
-- fail closed
+The current public runtime performs validation in `dry_run` mode and does not
+launch engines. Explicit `PLACEHOLDER_...` values are accepted only as
+unverified examples; the audit record marks signatures and engine hashes as
+unverified.
 
-The runtime should not contain application-specific business logic.
+Build with a C compiler and libsodium:
+
+```bash
+make build
+```
+
+Run:
+
+```bash
+build/mic-runtime \
+  --contract examples/contracts/compliance-check.contract.yaml \
+  --manifest examples/manifests/compliance-check.engine.yaml \
+  --policy examples/policies/default-fail-closed.policy.yaml \
+  --audit-out audit/compliance-check.audit.json
+```

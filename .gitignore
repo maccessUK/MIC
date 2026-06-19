@@ -1,0 +1,10 @@
+/build/
+/audit/
+*.exe
+*.dll
+*.so
+*.dylib
+.env
+.env.*
+*.key
+*.pem

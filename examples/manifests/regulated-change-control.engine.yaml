@@ -1,0 +1,16 @@
+mic_version: "0.1.1"
+engine_id: "example.change_control.verify"
+engine_version: "0.1.1"
+runtime_compatibility: ">=0.1.1 <0.2.0"
+binary_path: "examples/engines/regulated-change-control-engine"
+binary_sha256: "PLACEHOLDER_SHA256_REPLACE_AFTER_BUILD"
+allowed_tasks:
+  - "verify_regulated_change"
+allowed_actions:
+  - "verify_change_request"
+  - "verify_authorisations"
+  - "verify_change_window"
+  - "verify_rollback_plan"
+  - "generate_change_evidence"
+  - "write_audit_event"
+signature: "PLACEHOLDER_SIGNATURE_REPLACE_AFTER_SIGNING"
