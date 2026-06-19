@@ -138,7 +138,7 @@ MIC can sit beside or underneath a workflow engine. It is not trying to replace 
 ## Example Contract
 
 ```yaml
-mic_version: "0.1"
+mic_version: "0.1.1"
 
 contract_id: "ai-refund-approval-001"
 engine_id: "example.ai_agent_action_approval"
@@ -213,7 +213,7 @@ MIC/
 
 ## Current Status
 
-MIC v0.1 is experimental.
+MIC v0.1.1 is experimental.
 
 The current focus is:
 
