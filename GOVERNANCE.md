@@ -4,7 +4,7 @@
 
 MIC is experimental v0.1.1
 
-The project is currently focused on proving the contract model, runtime boundary, engine boundary, and audit model.
+The project is currently focused on proving the contract model, MIC Core boundary, engine boundary, and audit model.
 
 ## Design Principles
 
@@ -32,7 +32,7 @@ The following labels are reserved for future governance:
 - MIC Compatible
 - MIC Certified
 - MIC Verified
-- Official MIC Runtime
+- Official MIC Core
 - Official MIC Validator
 
 Do not use these labels without written approval from the project owner.
@@ -42,7 +42,7 @@ Do not use these labels without written approval from the project owner.
 Possible future governance work:
 
 - public validator
-- approved runtime hashes
+- approved MIC Core hashes
 - engine registry
 - engine revocation list
 - certification rules

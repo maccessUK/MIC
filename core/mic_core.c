@@ -1,5 +1,5 @@
 /*
- * MIC v0.1.1 public reference runtime.
+ * MIC v0.1.1 public reference core.
  *
  * Validates a contract, engine manifest, and policy and writes JSON audit
  * output. It does not execute engines. Explicit placeholder hashes and

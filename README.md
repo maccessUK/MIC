@@ -22,7 +22,7 @@ MIC is not an AI model.
 
 MIC is not a workflow engine.
 
-MIC is a signed runtime governance layer for controlled, auditable machine execution.
+MIC is a signed execution governance layer for controlled, auditable machine execution.
 
 
 ---
@@ -105,7 +105,7 @@ Human / System Intent
         ↓
 Signed MIC Contract
         ↓
-MIC Core Runtime
+MIC Core
         ↓
 Contract Verification
         ↓

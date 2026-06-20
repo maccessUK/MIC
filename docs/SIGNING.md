@@ -2,7 +2,7 @@
 
 MIC uses detached Ed25519 signatures for contracts and engine manifests.
 
-The reference runtime contains this public verification key:
+The reference core contains this public verification key:
 
 ```text
 e32a5b81a9d0d198416d411b5ba765daea72c523b007c735b93b2c449c4264c3
@@ -12,7 +12,7 @@ This value is a public key. It cannot create signatures.
 
 ## Signed bytes
 
-The runtime verifies all bytes before the top-level `signature:` line,
+The MIC Core verifies all bytes before the top-level `signature:` line,
 including the newline immediately before that line. Producers must preserve
 byte-for-byte canonical content when signing.
 
@@ -37,6 +37,6 @@ That placeholder permits only an unverified dry run.
 
 - Never commit private signing keys.
 - Never place private keys in example contracts.
-- Keep signing services separate from runtime verification.
+- Keep signing services separate from MIC Core verification.
 - Rotate trust roots through an explicit, reviewed release process.
 - Publish checksums and signed release metadata for compiled artifacts.

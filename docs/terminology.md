@@ -8,7 +8,7 @@ The desired outcome requested by a human, system, or AI agent.
 
 A signed machine-readable description of the task, inputs, allowed actions, constraints, and audit requirements.
 
-## Core Runtime
+## MIC Core
 
 The small trusted component that verifies contracts, enforces policy, launches engines, captures results, and writes audit records.
 

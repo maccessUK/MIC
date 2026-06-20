@@ -1,6 +1,6 @@
-# MIC v0.1.1 Runtime
+# MIC v0.1.1 Core
 
-The public C runtime is a fail-closed reference validator. It reads a contract,
+The public C core is a fail-closed reference validator. It reads a contract,
 engine manifest, and policy from paths supplied on the command line.
 
 It checks:
@@ -38,13 +38,13 @@ Equivalent command:
 
 ```bash
 cc -O2 -Wall -Wextra -Wpedantic \
-  runtime/mic_runtime.c -o build/mic-runtime -lsodium
+  core/mic_core.c -o build/mic-core -lsodium
 ```
 
 ## Run
 
 ```bash
-build/mic-runtime \
+build/mic-core \
   --contract examples/contracts/compliance-check.contract.yaml \
   --manifest examples/manifests/compliance-check.engine.yaml \
   --policy examples/policies/default-fail-closed.policy.yaml \

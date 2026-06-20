@@ -21,7 +21,7 @@ MIC Contract
   ↓
 Validator
   ↓
-Runtime
+MIC Core
   ↓
 Engine
   ↓
@@ -79,9 +79,9 @@ output:
 signature: "<signature>"
 ```
 
-## Required Runtime Behaviour
+## Required MIC Core Behaviour
 
-A MIC runtime must:
+A MIC Core implementation must:
 
 - fail closed
 - reject unknown MIC versions unless explicitly supported
@@ -96,9 +96,9 @@ A MIC runtime must:
 - produce an audit record
 - stop execution on failed required checks
 
-## Core Runtime Responsibilities
+## MIC Core Responsibilities
 
-The MIC Core Runtime is responsible for:
+The MIC Core is responsible for:
 
 - contract parsing
 - contract validation
@@ -111,7 +111,7 @@ The MIC Core Runtime is responsible for:
 - capturing engine results
 - writing audit records
 
-The MIC Core Runtime must not contain application-specific business logic.
+The MIC Core must not contain application-specific business logic.
 
 ## Engine Responsibilities
 

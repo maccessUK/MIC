@@ -55,9 +55,9 @@ It should include:
 
 If the engine hash does not match the manifest, execution must be rejected.
 
-## Core Runtime Boundary
+## MIC Core Boundary
 
-The MIC Core Runtime must remain small and generic.
+The MIC Core must remain small and generic.
 
 It should verify, enforce, launch, capture, and audit.
 

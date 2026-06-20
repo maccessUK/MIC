@@ -7,7 +7,7 @@ Trusted public key
         ↓
 Signed contract + signed engine manifest
         ↓
-MIC runtime validation
+MIC Core validation
         ↓
 Policy, task, action, network, and resource checks
         ↓
@@ -22,7 +22,7 @@ Application worker independently decides whether to apply state
 
 ## Fail-closed rules
 
-The runtime rejects:
+The MIC Core rejects:
 
 - unsupported versions
 - missing required fields
@@ -38,7 +38,7 @@ The runtime rejects:
 
 Contracts describe intent and constraints. Manifests describe an engine and its
 allowed capabilities. Policies impose organisation-level restrictions. The
-runtime validates those relationships.
+MIC Core validates those relationships.
 
 Engines produce evidence. Application workers remain responsible for business
 state changes and must independently validate MIC output.

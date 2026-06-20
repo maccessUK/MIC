@@ -11,7 +11,7 @@ MIC uses signed contracts to define machine intent, allowed actions, execution c
 ## What MIC Is
 
 - a contract format
-- a runtime boundary
+- a MIC Core boundary
 - an audit model
 - an engine supervision model
 - a way to govern automation and AI actions

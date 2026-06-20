@@ -43,7 +43,7 @@ You may redistribute unmodified copies of MIC for permitted free use, provided t
 
 You may create modifications for permitted free use.
 
-Modified versions must not claim to be the official MIC runtime, official MIC validator, or MIC-certified unless approved in writing by the copyright holder.
+Modified versions must not claim to be the official MIC Core, official MIC validator, or MIC-certified unless approved in writing by the copyright holder.
 
 ## 5. Trademarks and Branding
 

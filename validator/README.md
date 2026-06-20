@@ -12,4 +12,4 @@ The validator should check:
 - output shape
 - signature validity where enabled
 
-A future online validator can allow users to paste a contract and see whether it is structurally valid and compatible with a MIC runtime.
+A future online validator can allow users to paste a contract and see whether it is structurally valid and compatible with the MIC Core.

@@ -11,7 +11,7 @@ Useful contributions include:
 - clearer examples
 - better documentation
 - validator improvements
-- runtime safety checks
+- MIC Core safety checks
 - test contracts
 - threat model improvements
 - audit record improvements

@@ -4,11 +4,11 @@ LDLIBS ?= -lsodium
 
 .PHONY: build clean
 
-build: build/mic-runtime
+build: build/mic-core
 
-build/mic-runtime: runtime/mic_runtime.c
+build/mic-core: core/mic_core.c
 	mkdir -p build
-	$(CC) $(CFLAGS) runtime/mic_runtime.c -o build/mic-runtime $(LDLIBS)
+	$(CC) $(CFLAGS) core/mic_core.c -o build/mic-core $(LDLIBS)
 
 clean:
 	rm -rf build audit
