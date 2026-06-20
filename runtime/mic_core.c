@@ -6,8 +6,8 @@
  * signatures are accepted only as an unverified example dry run.
  *
  * Build:
- *   cc -O2 -Wall -Wextra -Wpedantic runtime/mic_runtime.c \
- *      -o build/mic-runtime -lsodium
+ *   cc -O2 -Wall -Wextra -Wpedantic core/mic_core.c \
+ *      -o build/mic-core -lsodium
  */
 
 #include <sodium.h>
