@@ -341,3 +341,6 @@ See [LICENSE.md](LICENSE.md).
 
 MIC is an experimental trust and evidence layer for automated task execution. It uses signed contracts to define intent, allowed actions, safety constraints, and audit requirements before execution occurs.
 
+## Keywords
+
+AI agent governance, signed automation, machine intent contracts, policy-bound execution, runtime evidence, audit trail, fail-closed automation, Ed25519 verification, secure task execution, machine-action verification.
