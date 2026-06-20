@@ -2,21 +2,28 @@
 
 **Status:** Experimental v0.1.1
 
-MIC is an experimental framework for describing machine work as a signed, auditable contract.
+MIC is an experimental trust and evidence layer for automated task execution.
 
-Instead of letting automation, AI agents, or background jobs perform actions directly, MIC defines:
+It uses signed contracts, policies, trusted engine manifests, and audit records to prove what a machine, automation tool, background worker, or AI agent was allowed to do — and what evidence was produced afterwards.
 
-- what is being requested
-- what actions are allowed
-- what safety limits apply
-- what evidence must be produced
-- what audit record must exist afterwards
+MIC is designed for systems where automation should not be trusted blindly.
+
+Instead of letting software or AI agents perform sensitive work directly, MIC defines:
+
+* what is being requested
+* which engine is allowed to process it
+* which actions are permitted
+* which safety limits apply
+* which files, paths, or resources are allowed
+* what evidence must be produced
+* what audit record must exist afterwards
 
 MIC is not an AI model.
 
 MIC is not a workflow engine.
 
-MIC is a trust and evidence layer for automated decision-making and secure task execution.
+MIC is a signed runtime governance layer for controlled, auditable machine execution.
+
 
 ---
 
@@ -62,6 +69,35 @@ Achieve this outcome, using only these allowed actions, within these limits, and
 
 ---
 
+## Who MIC Is For
+
+MIC is intended for developers, researchers, auditors, compliance teams, and system designers working on:
+
+* AI agent governance
+* signed automation
+* policy-bound execution
+* secure background jobs
+* regulated document processing
+* audit-heavy workflows
+* evidence-based task approval
+* fail-closed runtime systems
+* machine-action verification
+
+MIC is probably unnecessary for ordinary CRUD apps, blogs, basic scripts, or low-risk internal tools.
+
+It is aimed at systems where the question is not just:
+
+```text
+Did the task run?
+```
+
+but:
+
+```text
+Was this task authorised, constrained, verified, and auditable?
+```
+
+---
 ## Basic Flow
 
 ```text
@@ -107,31 +143,45 @@ MIC is probably overkill for ordinary web apps, blogs, small scripts, or simple 
 
 ---
 
-## Why Not Just Use A Workflow Engine?
+## Why Not Just Use a Workflow Engine?
 
 Workflow engines orchestrate work.
 
-MIC governs work.
+MIC governs whether machine work is allowed, constrained, verified, and evidenced.
 
-Workflow engines are usually concerned with:
+A workflow engine may answer:
 
-- steps
-- queues
-- retries
-- branching
-- scheduling
+```text
+What step runs next?
+```
 
-MIC is concerned with:
+MIC asks:
 
-- intent
-- authority
-- allowed actions
-- constraints
-- evidence
-- verification
-- auditability
+```text
+Was this machine action allowed to run at all, under this policy, with this trusted engine, and can we prove what happened?
+```
 
-MIC can sit beside or underneath a workflow engine. It is not trying to replace every orchestration tool.
+Workflow engines usually focus on:
+
+* queues
+* retries
+* branching
+* scheduling
+* long-running processes
+
+MIC focuses on:
+
+* signed intent
+* trusted engine identity
+* policy limits
+* allowed actions
+* core constraints
+* evidence output
+* audit records
+* fail-closed behaviour
+
+MIC can sit beside, underneath, or inside a workflow system. It is not trying to replace orchestration.
+
 
 ---
 
@@ -200,13 +250,13 @@ MIC/
 │  ├─ manifests/
 │  └─ policies/
 ├─ docs/
-│  ├─ RUNTIME.md
+│  ├─ core.md
 │  ├─ SIGNING.md
 │  ├─ TRUST_CHAIN.md
 │  ├─ positioning.md
 │  └─ terminology.md
-├─ runtime/
-│  ├─ mic_runtime.c
+├─ core/
+│  ├─ mic_core.c
 │  └─ README.md
 └─ validator/
    └─ README.md
@@ -216,7 +266,7 @@ MIC/
 
 ## What is included in v0.1.1?
 
-- C runtime source
+- C core source
 - example contracts
 - example engine manifests
 - example policies
@@ -246,14 +296,14 @@ With a C compiler, `make`, and libsodium development headers installed:
 ```bash
 make build
 
-build/mic-runtime \
+build/mic-core \
   --contract examples/contracts/compliance-check.contract.yaml \
   --manifest examples/manifests/compliance-check.engine.yaml \
   --policy examples/policies/default-fail-closed.policy.yaml \
   --audit-out audit/compliance-check.audit.json
 ```
 
-See [runtime documentation](docs/RUNTIME.md),
+See [core documentation](docs/core.md),
 [signing](docs/SIGNING.md), and the [trust chain](docs/TRUST_CHAIN.md).
 
 ---
